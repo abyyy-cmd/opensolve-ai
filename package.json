@@ -2,11 +2,18 @@
   "name": "opensolve-ai-workspace",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "opensolve-ai"
+  ],
   "scripts": {
+    "postinstall": "npm --prefix opensolve-ai install",
     "dev": "npm --prefix opensolve-ai run dev",
     "build": "npm --prefix opensolve-ai run build",
     "start": "npm --prefix opensolve-ai run start",
     "lint": "npm --prefix opensolve-ai run lint"
+  },
+  "dependencies": {
+    "next": "16.3.0"
   },
   "allowScripts": {
     "@google/genai": "*",
