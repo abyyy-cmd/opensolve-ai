@@ -7,5 +7,10 @@
     "build": "npm --prefix opensolve-ai run build",
     "start": "npm --prefix opensolve-ai run start",
     "lint": "npm --prefix opensolve-ai run lint"
+  },
+  "allowScripts": {
+    "@google/genai": "*",
+    "protobufjs": "*",
+    "unrs-resolver": "*"
   }
 }
