@@ -18,7 +18,17 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-2 sm:gap-4">
+          <Link
+            href="/explore"
+            className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+              pathname === "/explore"
+                ? "font-semibold text-indigo-600"
+                : "text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            Explore
+          </Link>
           <Link
             href="/submit"
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${

@@ -1,0 +1,11 @@
+{
+  "name": "opensolve-ai-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix opensolve-ai run dev",
+    "build": "npm --prefix opensolve-ai run build",
+    "start": "npm --prefix opensolve-ai run start",
+    "lint": "npm --prefix opensolve-ai run lint"
+  }
+}

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import ProblemForm from "@/components/ProblemForm";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { ProblemInput, ProblemAnalysis, GeneratedSolution } from "@/lib/types";
 import { saveProblem } from "@/lib/storage";
 
@@ -234,16 +235,19 @@ export default function SubmitPage() {
   if (view === "loading") {
     return (
       <div className="flex flex-1 items-center justify-center px-4 py-20">
-        <div className="text-center">
-          <div className="mx-auto mb-5 h-12 w-12 animate-spin rounded-full border-2 border-gray-200 border-t-indigo-600" />
-          <h2 className="mb-2 text-lg font-semibold text-gray-900">
-            Analyzing your problem...
-          </h2>
-          <div className="space-y-1 text-sm text-gray-500">
-            <p>Understanding the challenge</p>
-            <p>Identifying root causes</p>
-            <p>Finding relevant technologies</p>
-          </div>
+        <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-sm sm:p-10">
+          <LoadingSpinner
+            size="lg"
+            messages={[
+              "Analyzing problem constraints...",
+              "Deconstructing root causes...",
+              "Mapping affected user groups...",
+              "Identifying technical bottlenecks...",
+              "Structuring problem analysis...",
+            ]}
+            intervalMs={2500}
+            subtext="OpenSolve AI is breaking down your problem into structured open innovation requirements."
+          />
         </div>
       </div>
     );
@@ -253,15 +257,19 @@ export default function SubmitPage() {
   if (view === "solution-loading") {
     return (
       <div className="flex flex-1 items-center justify-center px-4 py-20">
-        <div className="text-center">
-          <div className="mx-auto mb-5 h-12 w-12 animate-spin rounded-full border-2 border-gray-200 border-t-indigo-600" />
-          <h2 className="mb-2 text-lg font-semibold text-gray-900">
-            Building a solution...
-          </h2>
-          <p className="max-w-sm text-sm text-gray-500">
-            OpenSolve AI is combining the problem analysis, technologies,
-            resources, and constraints to create a practical solution.
-          </p>
+        <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-sm sm:p-10">
+          <LoadingSpinner
+            size="lg"
+            messages={[
+              "Analyzing problem constraints...",
+              "Cross-referencing open-source solutions...",
+              "Identifying required technical resources...",
+              "Structuring AI response...",
+              "Finalizing solution architecture...",
+            ]}
+            intervalMs={2500}
+            subtext="OpenSolve AI is formulating a feasible technical blueprint and phased implementation roadmap."
+          />
         </div>
       </div>
     );
